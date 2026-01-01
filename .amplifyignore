@@ -1,0 +1,13 @@
+# Files to ignore during AWS Amplify build
+node_modules/
+.next/
+.git/
+.env.local
+.env*.local
+*.log
+.DS_Store
+coverage/
+.swc/
+*.tsbuildinfo
+vercel.json
+
