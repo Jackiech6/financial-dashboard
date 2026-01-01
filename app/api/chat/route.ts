@@ -281,13 +281,13 @@ export async function POST(request: NextRequest) {
     // Fetch news for market questions
     if (intent.needsNews) {
       newsData = await fetchNews(ticker, baseUrl)
-      if (newsData?.articles && newsData.articles.length > 0) {
-        const headlines = newsData.articles.slice(0, 3).map((a: any) => a.title).join('; ')
+      if (newsData?.items && newsData.items.length > 0) {
+        const headlines = newsData.items.slice(0, 3).map((a: any) => a.title).join('; ')
         sources.push({
           type: 'news',
           detail: headlines.substring(0, 200), // Limit detail length
         })
-        console.log(`[Chat API] Fetched ${newsData.articles.length} news articles`)
+        console.log(`[Chat API] Fetched ${newsData.items.length} news articles`)
       }
     }
 
